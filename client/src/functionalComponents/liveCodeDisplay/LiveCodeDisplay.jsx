@@ -103,7 +103,7 @@ class LiveCodeDisplay extends React.Component {
        matchBrackets: true,
        mode: 'javascript', // reference options in folder
        theme: this.state.theme
-      //  readOnly: 'nocursor'
+      //  readOnly: 'nocursor'    //remove for read only, obviously.... -_-
     }
 
     return (

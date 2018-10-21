@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/Benji-Leboe/final#readme",
   "dependencies": {
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
     "concurrently": "~4.0.1",
-    "nodemon": "~1.18.4",
-    "react-codemirror": "^1.0.0"
+    "nodemon": "~1.18.4"
   }
 }
