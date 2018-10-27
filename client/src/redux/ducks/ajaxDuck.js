@@ -1,5 +1,5 @@
 import { updateBroadcasterStreams } from './streamsDuck.js';
-import store from './actions/index.js';
+import store from '../store/index.js';
 const axios = require('./api');
 
 export const fetchBroadcasterStreams = (userID) => {
@@ -9,12 +9,15 @@ export const fetchBroadcasterStreams = (userID) => {
     method: 'get',
     url: `/api/scheduledStreams?user_id=${userID}`
   }).then((res) => {
-    store.dispatch(updateBroadcasterStreams(res))
+    console.log(res)
+    const scheduledStreams = JSON.parse(res);
+    store.dispatch(updateBroadcasterStreams(scheduledStreams))
     console.log(res.data);
   }).catch((err) => {
     console.error('Error:', err.data);
     throw err;
   });
+  // return {type:null, payload:null}
 }
 
 export const postDeleteStream = (streamID) => {

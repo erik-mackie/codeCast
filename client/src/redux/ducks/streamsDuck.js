@@ -1,3 +1,4 @@
+import { fetchBroadcasterStreams } from './ajaxDuck'
 
 // // Outgoing
 // const OUTGOING_MESSAGE = 'server/message';
@@ -8,7 +9,6 @@
 // const INCOMING_NOTIFICATION = 'NEW_NOTIFICATION'
 const BROADCASTER_STREAMS_UPDATE = 'UPDATE_USER_STREAMS'
 
-
 // Action Creator
 export const updateBroadcasterStreams = (scheduledStreams) => ({ type: BROADCASTER_STREAMS_UPDATE, payload: scheduledStreams  });
 
@@ -18,9 +18,20 @@ export const streamsReducer = (state = {}, action) => {
   switch(action.type) {
     case BROADCASTER_STREAMS_UPDATE:
       console.log('message recieved', action.payload);
-      return { ...state, scheduledStreams: action.payload };
-    
+      let steamsArray = shitballs()
+      return shitballs(state);
+
     default:
       return state;
   }
 };
+ 
+async function shitballs(state) {
+  let resultArr = [];
+  let resultObj = await fetchBroadcasterStreams(1);
+  for (let item in resultObj) {
+    resultArr.push(resultObj[item]);
+  }
+  return await { ...state, scheduledStreams: resultArr };
+}
+

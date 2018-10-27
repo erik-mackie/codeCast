@@ -54,7 +54,12 @@ class Dashboard extends React.Component {
 
   render() {  
     console.log(this.props.scheduledStreams, "render");
-    const renderStreams = this.props.scheduledStreams.map( (stream) => {
+    const streamsArr = [];
+    for (const stream in this.props.scheduledStreams) {
+      streamsArr.push(this.props.scheduledStreams[stream])
+    }
+    console.log(streamsArr)
+    const renderStreams = streamsArr.map( (stream) => {
       return this.MakeScheduledStreamCard(stream);  
     });
 
@@ -92,7 +97,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteStream: (fileID) => dispatch(postDeleteStream(fileID)),
-    fetchBroadcasterStreams: (userID) => dispatch(fetchBroadcasterStreams(userID))
+    fetchBroadcasterStreams: (userID) => fetchBroadcasterStreams(userID)
   }
 }
 

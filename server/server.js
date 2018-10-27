@@ -33,7 +33,7 @@ app.use(morgan('dev', {
 }));
 
 app.get('/*', (req, res) => {
-  res.statusCode(200).json({ express: 'successful connection to express' });
+  res.status(200).json({ express: 'successful connection to express' });
 });
 
 app.get('/api/filecontent', (req, res) => {
@@ -42,29 +42,31 @@ app.get('/api/filecontent', (req, res) => {
 });
 
 const testStreams = {
-  asdass: {
+  "asdass": {
     title: 'NodeNStuff',
     user: 'Spencer h-White',
     description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
     scheduledDate: Date.now(),
     youtubeURL: 'www.youtube.com',
     userID: 1,
+    streamID: 'asdass',
     languageImage: 'image'
   },
-  asdfad: {
+  "asdfad": {
     title: 'RubyNStuff',
     user: 'Spencer Mc-Whhite',
     description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
     scheduledDate: Date.now(),
     youtubeURL: 'www.youtube.com',
     userID: 1,
+    streamID: 'asdfad',
     languageImage: 'image'
   }
 };
 
 app.get('/api/scheduledStreams/:user_id', (req, res) => {
-
-  res.json(testStreams);
+  console.log('Get success');
+  res.status(200).json(testStreams);
 });
 
 //recieve file dir/content from electron
