@@ -162,7 +162,6 @@ const terminal = io
       terminalOutput[now] = data;
       terminal.emit('terminal', terminalOutput[now]); // refactor to action when we store data
     });
-<<<<<<< HEAD
   });
 
 const testStreams = [
@@ -183,7 +182,6 @@ const testStreams = [
     languageImage: 'image'
   }
 ]
-=======
 
     socket.on('disconnect', () => {
       console.log(`Terminal socket ${socket.id} disconnected`)
@@ -193,7 +191,6 @@ const testStreams = [
     });
 });
 
->>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
 
 const testDirectory = {
   "projectRoot": {
