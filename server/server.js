@@ -39,7 +39,33 @@ app.get('/*', (req, res) => {
 app.get('/api/filecontent', (req, res) => {
   let fileID = req.body;
   fileCache ? res.status(200).json(JSON.stringify(fileCache[fileID])) : res.status(204).send('File not found');
-})
+});
+
+const testStreams = {
+  asdass: {
+    title: 'NodeNStuff',
+    user: 'Spencer h-White',
+    description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
+    scheduledDate: Date.now(),
+    youtubeURL: 'www.youtube.com',
+    userID: 1,
+    languageImage: 'image'
+  },
+  asdfad: {
+    title: 'RubyNStuff',
+    user: 'Spencer Mc-Whhite',
+    description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
+    scheduledDate: Date.now(),
+    youtubeURL: 'www.youtube.com',
+    userID: 1,
+    languageImage: 'image'
+  }
+};
+
+app.get('/api/scheduledStreams/:user_id', (req, res) => {
+
+  res.json(testStreams);
+});
 
 //recieve file dir/content from electron
 app.post('/api/electron', (req, res) => {
@@ -162,26 +188,8 @@ const terminal = io
       terminalOutput[now] = data;
       terminal.emit('terminal', terminalOutput[now]); // refactor to action when we store data
     });
-  });
+  
 
-const testStreams = [
-  {
-    title: 'NodeNStuff',
-    user: 'Spencer Mc-Whhite',
-    description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
-    scheduledDate: Date.now(),
-    youtubeURL: 'www.youtube.com',
-    languageImage: 'image'
-  },
-  {
-    title: 'RubyNStuff',
-    user: 'Spencer Mc-Whhite',
-    description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
-    scheduledDate: Date.now(),
-    youtubeURL: 'www.youtube.com',
-    languageImage: 'image'
-  }
-]
 
     socket.on('disconnect', () => {
       console.log(`Terminal socket ${socket.id} disconnected`)
@@ -189,7 +197,8 @@ const testStreams = [
       termClients.splice(clientIndex, 1);
       console.log(termClients);
     });
-});
+  });
+
 
 
 const testDirectory = {

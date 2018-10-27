@@ -1,28 +1,14 @@
 import React from 'react';
 import { Button } from 'antd';
+import { fetchBroadcasterStreams, postDeleteStream } from '../../redux/ducks/ajaxDuck.js';
+import { connect } from 'react-redux'; 
 
 class Dashboard extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {
-      scheduledStreams: [
-        {
-          title: 'HTML/CSS',
-          scheduledDate: "2018-03-25",
-          scheduledTime: "9am",
-          streamID: 1
-        },
-        {
-          title: 'Node',
-          scheduledDate: "2019-05-30",
-          scheduledTime: "3pm",
-          streamID: 2
-        }
-      ]
-    }
+  
+  componentWillMount() {
+    let userID = 1;
+    this.props.fetchBroadcasterStreams(userID);
   }
-
 
   LaunchScheduledStream = (clickedID) => {
     console.log(clickedID)
@@ -33,16 +19,16 @@ class Dashboard extends React.Component {
   }
 
   
-  DeleteCard = (clickedID) => {
+  // DeleteCard = (clickedID) => {
 
-    this.setState({scheduledStreams: this.state.scheduledStreams.filter( (stream) => {
-      return stream.streamID !== clickedID;
-    }) })
+  //   this.setState({scheduledStreams: this.props.scheduledStreams.filter( (stream) => {
+  //     return stream.streamID !== clickedID;
+  //   }) })
     
     //make as promise? since set state takes to long
     // leave in delete function
     // this.props.deleteStream(this.state.scheduledStreams);
-  }
+ 
 
   // need data structure for scheduled streams, for edit purposes
 
@@ -59,7 +45,7 @@ class Dashboard extends React.Component {
           </div>
           <div className="controls">
             <Button id="edit-btn"  type="primary" onClick={ () => this.OpenEditControls(streamID) }>Edit</Button>
-            <Button id="delete-btn" type="primary" onClick={ () => this.DeleteCard(streamID) }>Delete</Button>
+            <Button id="delete-btn" type="primary" onClick={ () => this.props.deleteStream(streamID) }>Delete</Button>
           </div>
         </div>
       </div>
@@ -67,8 +53,8 @@ class Dashboard extends React.Component {
   }
 
   render() {  
-    console.log(this.state.scheduledStreams, "render");
-    const renderStreams = this.state.scheduledStreams.map( (stream) => {
+    console.log(this.props.scheduledStreams, "render");
+    const renderStreams = this.props.scheduledStreams.map( (stream) => {
       return this.MakeScheduledStreamCard(stream);  
     });
 
@@ -97,20 +83,21 @@ class Dashboard extends React.Component {
 
 // leave in 
 
-// const mapStateToProps = (state) => {
-//   return {
-//     fileDir: state.directory.directoryStructure
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    scheduledStreams: state.streams.scheduledStreams
+  }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     deleteStream: (fileID) => dispatch(updateFile(fileID))
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteStream: (fileID) => dispatch(postDeleteStream(fileID)),
+    fetchBroadcasterStreams: (userID) => dispatch(fetchBroadcasterStreams(userID))
+  }
+}
 
-export default Dashboard;
-// export default connect(null, null)(ActiveStreams);
+// export default Dashboard;
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
 // data representation
 // {
