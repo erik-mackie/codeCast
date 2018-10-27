@@ -12,7 +12,7 @@ function executor(action, emit, next, dispatch) {
 
 const socketMW = createSocketMW(io, 'server/', { execute: executor });
 
-const store = applyMiddleware(socketMW)(createStore)(rootReducer);
+const store = applyMiddleware(socketMW)(createStore)(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 // Testing
 store.subscribe(() => {

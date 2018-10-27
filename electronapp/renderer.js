@@ -57,16 +57,6 @@ xterm1.on('data', (data) => {
 
 ptyProcess.on('data', function (data) {
   xterm1.write(data);
-  io.emit('data', data)
-  // fs.appendFile('log.txt', data)
-
-  // fifoOut.write(data, (err) => {
-  //   if (err) throw err
-  // });
-
+  
+  io.emit('data', data);
 });
-
-// fifoIn.on('data', Fdata => {
-//   console.log('Incoming data from FIFO:', decoder.write(Fdata));
-// });
-// (() => {})();

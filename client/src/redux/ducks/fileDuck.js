@@ -5,6 +5,7 @@ const FILE_UPDATE = 'FILE_UPDATE'
 
 // Action Creators
 
+
 // FILE REDUCER
 const fileState = { activeFileContents: 'Welcome to codeCast! Click on a file in the explorer to see its contents!'}
 export const fileReducer = (state = fileState, action) => {

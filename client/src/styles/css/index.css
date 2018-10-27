@@ -76,6 +76,7 @@
 
 .file-container {
   display: flex;
+<<<<<<< HEAD
   flex-direction: column; }
   .file-container .theme-select-container {
     display: flex;
@@ -83,6 +84,21 @@
     justify-content: center;
     align-items: center;
     height: 100px;
+=======
+  flex-direction: column;
+  min-height: 100%; }
+  .file-container .react-codemirror2 {
+    position: relative;
+    min-height: 100%; }
+    .file-container .react-codemirror2 .CodeMirror {
+      min-height: 42vh; }
+  .file-container .theme-select-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
     background-color: rgba(0, 0, 0, 0.6); }
     .file-container .theme-select-container .select-text {
       color: #EEE;
@@ -151,10 +167,31 @@ main .currentStream {
       .streams .activeStreamCard .description-container p {
         font-size: 1.2em; }
 
+<<<<<<< HEAD
 .wrapper {
   position: relative;
   display: flex;
   flex-wrap: nowrap; }
+=======
+.Terminal-display {
+  position: relative;
+  overflow: scroll; }
+  .Terminal-display .wrapper {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: nowrap; }
+    .Terminal-display .wrapper .terminal-main div.xterm-screen {
+      display: flex;
+      min-width: 50vw;
+      min-height: 48vh; }
+    .Terminal-display .wrapper .terminal-main canvas[class^="xterm-"] {
+      display: flex;
+      min-width: 50vw !important;
+      min-height: 48vh; }
+    .Terminal-display .wrapper .terminal-main canvas.xterm-text-layer, .Terminal-display .wrapper .terminal-main canvas.xterm-cursor-layer {
+      padding: 0.5rem 3rem 1rem 2rem; }
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
 
 .Filetree-display {
   background-color: #282a36 !important; }
@@ -181,14 +218,26 @@ code {
 
 .App {
   flex-direction: column;
+<<<<<<< HEAD
   height: 80vh;
   width: 100vw; }
+=======
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden; }
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
   .App .component-container1 {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: "Filetree Video Chat"; }
     .App .component-container1 .Filetree-display {
       position: relative;
+<<<<<<< HEAD
+=======
+      max-height: 52vh;
+      overflow-y: auto;
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
       height: 100%;
       width: 100%;
       grid-area: Filetree;
@@ -205,10 +254,15 @@ code {
       grid-area: Chat; }
   .App .component-container2 {
     display: grid;
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
     height: 47vh;
     grid-template-columns: 50% 50%;
     grid-template-areas: "Code Terminal"; }
     .App .component-container2 .Code-display {
+<<<<<<< HEAD
       position: relative;
       height: 100%;
       width: 100%;
@@ -220,6 +274,18 @@ code {
       display: flex;
       grid-area: Terminal;
       background-color: grey; }
+=======
+      grid-column: span 6;
+      position: relative;
+      height: 100%;
+      grid-area: Code; }
+    .App .component-container2 .Terminal-display {
+      grid-column: span 6;
+      position: relative;
+      display: flex;
+      min-width: 100vw;
+      grid-area: Terminal; }
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -243,6 +309,7 @@ code {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+<<<<<<< HEAD
 .electron {
   width: 800px;
   height: 600px;
@@ -367,5 +434,7 @@ code {
         font-size: 2em; }
       .electron .start-scheduled .main-container div p {
         font-size: 1em; }
+=======
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
 
 /*# sourceMappingURL=index.css.map */

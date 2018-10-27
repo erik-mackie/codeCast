@@ -18,14 +18,14 @@ class Console extends Component {
 
   componentWillMount() {
     Terminal.applyAddon(fit);
-    this.terminal = new Terminal({scrollback: 99999999});
+    this.terminal = new Terminal({scrollback: 99999999, cursorBlink: true});
   }
 
   componentDidMount() {
     const io = socket.connect('http://localhost:8080/terminal');
     io.on('terminal', (data) => {
-      this.terminal.write(data)
-    })
+      this.terminal.write(data);
+    });
   }
 
   render() {

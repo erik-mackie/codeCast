@@ -1,0 +1,115 @@
+{
+  "README.md": "73ba85a0-d98d-11e8-8dcc-299e946f1f81",
+  "client": {
+    "public": {
+      "index.html": "73baacb2-d98d-11e8-8dcc-299e946f1f81",
+      "manifest.json": "73baacb3-d98d-11e8-8dcc-299e946f1f81"
+    },
+    "src": {
+      "HelperComponents": {
+        "FilterLink.jsx": "73baacb6-d98d-11e8-8dcc-299e946f1f81",
+        "ReduxBoilerplate.jsx": "73baacb7-d98d-11e8-8dcc-299e946f1f81"
+      },
+      "StreamComponents": {
+        "Chat": {
+          "messages": {
+            "initialMessageUtil.js": "73baacbd-d98d-11e8-8dcc-299e946f1f81"
+          },
+          "ChatBar.jsx": "73baacb9-d98d-11e8-8dcc-299e946f1f81",
+          "ChatMain.jsx": "73baacba-d98d-11e8-8dcc-299e946f1f81",
+          "Message.jsx": "73baacbb-d98d-11e8-8dcc-299e946f1f81",
+          "MessageList.jsx": "73baacbc-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "FileDirectory": {
+          "FileDirectory.jsx": "73bad3c0-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "FileDisplay": {
+          "LiveCodeDisplay.jsx": "73bad3c1-d98d-11e8-8dcc-299e946f1f81",
+          "StyleDisplay.jsx": "73bad3c2-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "Terminal": {
+          "Terminal.jsx": "73bad3c3-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "VideoStream": {
+          "VideoStream.jsx": "73bad3c4-d98d-11e8-8dcc-299e946f1f81"
+        }
+      },
+      "ViewComponents": {
+        "IndexViews": {
+          "ActiveStreams": {
+            "ActiveStreams.jsx": "73bad3c7-d98d-11e8-8dcc-299e946f1f81"
+          },
+          "ArchivedStreams": {
+            "ArchivedStreams.jsx": "73bad3c8-d98d-11e8-8dcc-299e946f1f81"
+          },
+          "ScheduledStreams": {
+            "ScheduledStreams.jsx": "73bad3ca-d98d-11e8-8dcc-299e946f1f81"
+          },
+          "IndexViews.jsx": "73bad3c9-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "Footer.jsx": "73bad3c5-d98d-11e8-8dcc-299e946f1f81",
+        "Header.jsx": "73bad3c6-d98d-11e8-8dcc-299e946f1f81"
+      },
+      "redux": {
+        "actions": {
+          "fetch-example.js": "73bad3cc-d98d-11e8-8dcc-299e946f1f81",
+          "index.js": "73bad3cd-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "ducks": {
+          "Ducktator.js": "73bad3ce-d98d-11e8-8dcc-299e946f1f81",
+          "chatDuck.js": "73bad3cf-d98d-11e8-8dcc-299e946f1f81",
+          "directoryDuck.js": "73bad3d0-d98d-11e8-8dcc-299e946f1f81",
+          "fileDuck.js": "73bad3d1-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "store": {
+          "index.js": "73bad3d2-d98d-11e8-8dcc-299e946f1f81"
+        }
+      },
+      "styles": {
+        "css": {
+          "App.css": "73bad3d4-d98d-11e8-8dcc-299e946f1f81",
+          "App.css.map": "73bafad0-d98d-11e8-8dcc-299e946f1f81",
+          "index.css": "73bafad1-d98d-11e8-8dcc-299e946f1f81",
+          "index.css.map": "73bafad2-d98d-11e8-8dcc-299e946f1f81"
+        },
+        "scss": {
+          "partials": {
+            "_activeStreamsCard.scss": "73bafad5-d98d-11e8-8dcc-299e946f1f81",
+            "_archivedStreamsCards.scss": "73bafad6-d98d-11e8-8dcc-299e946f1f81",
+            "_chat.scss": "73bb21e0-d98d-11e8-8dcc-299e946f1f81",
+            "_fileDirectory.scss": "73bb48f0-d98d-11e8-8dcc-299e946f1f81",
+            "_fileViewer.scss": "73bb48f1-d98d-11e8-8dcc-299e946f1f81",
+            "_scheduledStreamCard.scss": "73bb48f2-d98d-11e8-8dcc-299e946f1f81",
+            "_terminal.scss": "73bb48f3-d98d-11e8-8dcc-299e946f1f81",
+            "_video.scss": "73bb48f4-d98d-11e8-8dcc-299e946f1f81"
+          },
+          "App.scss": "73bafad3-d98d-11e8-8dcc-299e946f1f81",
+          "index.scss": "73bafad4-d98d-11e8-8dcc-299e946f1f81"
+        }
+      },
+      "App.jsx": "73baacb4-d98d-11e8-8dcc-299e946f1f81",
+      "App.test.jsx": "73baacb5-d98d-11e8-8dcc-299e946f1f81",
+      "Root.jsx": "73baacb8-d98d-11e8-8dcc-299e946f1f81",
+      "index.js": "73bad3cb-d98d-11e8-8dcc-299e946f1f81",
+      "serviceWorker.js": "73bad3d3-d98d-11e8-8dcc-299e946f1f81"
+    },
+    ".eslintrc.json": "73baacb0-d98d-11e8-8dcc-299e946f1f81",
+    "package.json": "73baacb1-d98d-11e8-8dcc-299e946f1f81"
+  },
+  "electronapp": {
+    "api.js": "73bb48f5-d98d-11e8-8dcc-299e946f1f81",
+    "index.html": "73bb48f6-d98d-11e8-8dcc-299e946f1f81",
+    "main.js": "73bb48f7-d98d-11e8-8dcc-299e946f1f81",
+    "npm_install.sh": "73bb48f8-d98d-11e8-8dcc-299e946f1f81",
+    "package.json": "73bb48f9-d98d-11e8-8dcc-299e946f1f81",
+    "renderer.js": "73bb48fa-d98d-11e8-8dcc-299e946f1f81"
+  },
+  "nodemon.json": "73bb48fb-d98d-11e8-8dcc-299e946f1f81",
+  "package.json": "73bb48fc-d98d-11e8-8dcc-299e946f1f81",
+  "server": {
+    "fs-mapper.js": "73bb48fd-d98d-11e8-8dcc-299e946f1f81",
+    "logger.js": "73bb48fe-d98d-11e8-8dcc-299e946f1f81",
+    "package.json": "73bb48ff-d98d-11e8-8dcc-299e946f1f81",
+    "server.js": "73bb4900-d98d-11e8-8dcc-299e946f1f81"
+  }
+}

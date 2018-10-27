@@ -6,9 +6,11 @@
   "scripts": {
     "start": "electron . --ignore-gpu-blacklist"
   },
+  "proxy": "http://localhost:8080",
   "repository": "https://github.com/Tyriar/node-pty",
   "author": "Tyriar",
   "dependencies": {
+    "axios": "~0.18.0",
     "electron": "^2.0.9",
     "node-pty": "^0.7.8",
     "socket.io-client": "^2.1.1",

@@ -26,7 +26,7 @@ export const chatReducer = (state = chatState, action) => {
   switch(action.type) {
     case INCOMING_MESSAGE:
       console.log('message recieved', action.payload);
-      return {...state, messages: action.payload};
+      return {...state, messages: [...state.messages, action.payload] };
     case INCOMING_NOTIFICATION:
       console.log('notification recieved', action.payload)
       return {...state, notifications: action.payload}

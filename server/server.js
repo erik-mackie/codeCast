@@ -1,11 +1,10 @@
-//const ENV = require ('dotenv');
-const app = require('express')();
-const http = require('http').Server(app);
-const path = require('path');
-const fs = require('fs');
-const morgan = require('morgan');
-
-const PORT = 8080;
+//const ENV      = require ('dotenv');
+const app        = require('express')();
+const http       = require('http').Server(app);
+const path       = require('path');
+const morgan     = require('morgan');
+const bodyParser = require('body-parser');
+const PORT       = 8080;
 
 const server = http.listen(PORT, () => console.log('App listening on ' + PORT));
 
@@ -16,6 +15,11 @@ const buildPath = path.join(rootPath, 'client/build');
 
 let ActiveViewFile = `nothing`;
 
+let fileCache = null;
+let dirCache = null;
+
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+app.use(bodyParser.json({limit: '50mb'}));
 
 app.use(morgan('dev', {
   skip: (req, res) => {
@@ -29,7 +33,18 @@ app.use(morgan('dev', {
 }));
 
 app.get('/*', (req, res) => {
-  res.statusCode(200).json({ express: 'successful connection to express' })
+  res.statusCode(200).json({ express: 'successful connection to express' });
+});
+
+app.get('/api/filecontent', (req, res) => {
+  let fileID = req.body;
+  fileCache ? res.status(200).json(JSON.stringify(fileCache[fileID])) : res.status(204).send('File not found');
+})
+
+//recieve file dir/content from electron
+app.post('/api/electron', (req, res) => {
+  
+  res.status(200).send('Post success');
 });
 
 io.on('connection', (socket) => {
@@ -80,15 +95,16 @@ const redux = io
     console.log(`Socket ${socket.id} connected`);
     clients.push(socket.id);
     console.log(clients);
-
-    socket.on('action', (action) => {
+   
+    socket.on('action', (action) => {      
 
       const actions = {
         'server/message': (type, payload) => {
           console.log('server/message action triggered', payload);
-          redux.emit('action', { type, payload });
+          redux.emit('action', { type: 'NEW_MESSAGE', payload });
         },
         'server/directory_pushed': (type, payload) => {
+
           console.log('server/dir_push triggered', payload);
           redux.emit('action', { type, payload });
         },
@@ -131,6 +147,8 @@ const redux = io
     });
   });
 
+const terminalOutput = {};
+
 const terminal = io
   .of('/terminal')
   .on('connection', (socket) => {
@@ -140,9 +158,11 @@ const terminal = io
     console.log(termClients);
 
     socket.on('data', (data) => {
-      console.log('terminal data:', data);
-      terminal.emit('terminal', data); // refactor to action when we store data
+      let now = Date.now();
+      terminalOutput[now] = data;
+      terminal.emit('terminal', terminalOutput[now]); // refactor to action when we store data
     });
+<<<<<<< HEAD
   });
 
 const testStreams = [
@@ -163,6 +183,17 @@ const testStreams = [
     languageImage: 'image'
   }
 ]
+=======
+
+    socket.on('disconnect', () => {
+      console.log(`Terminal socket ${socket.id} disconnected`)
+      let clientIndex = termClients.findIndex(e => e === socket.id);
+      termClients.splice(clientIndex, 1);
+      console.log(termClients);
+    });
+});
+
+>>>>>>> 39414e6215c052ded3fa3858d0764884b00ae7de
 
 const testDirectory = {
   "projectRoot": {

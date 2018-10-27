@@ -32,18 +32,23 @@ code {
 
 .App {
   flex-direction: column;
-  height: 80vh;
-  width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
   // background-color: black;
 
   .component-container1 {
     display: grid;
+    
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: 
       "Filetree Video Chat";
 
     .Filetree-display {
       position: relative;
+      max-height: 52vh;
+      overflow-y: auto; 
       height: 100%;
       width: 100%; 
       grid-area: Filetree;
@@ -68,25 +73,25 @@ code {
 
   .component-container2 {
     display: grid;
+    position: relative;
     height: 47vh;
     grid-template-columns: 50% 50%;
     grid-template-areas:
       "Code Terminal";
 
     .Code-display {
+      grid-column: span 6;
       position: relative;
       height: 100%;
-      width: 100%; 
       grid-area: Code;
     }
 
     .Terminal-display {
+      grid-column: span 6;
       position: relative;
-      height: 100%;
-      width: 100%; 
       display: flex;
+      min-width: 100vw;
       grid-area: Terminal;
-      background-color: grey;
     }
   }
 }

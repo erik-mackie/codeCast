@@ -5,7 +5,7 @@
   "main": "client/src/index.js",
   "scripts": {
     "update-all": "concurrently 'npm update' 'npm update --prefix server' 'npm update --prefix client'",
-    "install-all": "concurrently 'npm install' 'npm install --prefix server' 'npm install --prefix client' 'chmod 777 ./npm_install.sh --prefix electronapp'",
+    "install-all": "concurrently 'npm install' 'npm install --prefix server' 'npm install --prefix client' 'chmod 777 electronapp/npm_install.sh' './electronapp/npm_install.sh'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js",
     "react": "npm start --prefix client",
@@ -25,7 +25,6 @@
   "dependencies": {
     "concurrently": "~4.0.1",
     "nodemon": "~1.18.4",
-    "react-codemirror": "^1.0.0",
     "xterm": "^3.8.0"
   },
   "devDependencies": {
