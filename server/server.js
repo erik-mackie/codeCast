@@ -145,8 +145,24 @@ const terminal = io
     });
   });
 
-
-
+const testStreams = [
+  {
+    title: 'NodeNStuff',
+    user: 'Spencer Mc-Whhite',
+    description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
+    scheduledDate: Date.now(),
+    youtubeURL: 'www.youtube.com',
+    languageImage: 'image'
+  },
+  {
+    title: 'RubyNStuff',
+    user: 'Spencer Mc-Whhite',
+    description: 'asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada',
+    scheduledDate: Date.now(),
+    youtubeURL: 'www.youtube.com',
+    languageImage: 'image'
+  }
+]
 
 const testDirectory = {
   "projectRoot": {
