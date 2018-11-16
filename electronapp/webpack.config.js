@@ -17,6 +17,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.less$/,
+        use: [
+          "style-loader", {loader: 'css-loader', options: {sourceMap: 1}}, "postcss-loader",
+          {
+            loader: 'less-loader', options: { javascriptEnabled: true }
+          }
+        ]
+      },
+      {
         test: /\.jsx?/,
         exclude: /node_modules/,
         use: {
@@ -48,10 +57,10 @@ module.exports = {
         ]
       },
       {
-        test: /\.less$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'less-loader', options: { javascriptEnabled: true }
+            loader: 'file-loader'
           }
         ]
       },
@@ -65,6 +74,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    extensions: ['.json', '.js', '.jsx', '.css', '.less']
   },
   plugins: [
     // Generates an `index.html` file with the <script> injected.

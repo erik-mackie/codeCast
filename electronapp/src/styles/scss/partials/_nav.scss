@@ -1,0 +1,28 @@
+.nav-container {
+  .nav-header {
+    display: flex;
+    min-width: 100vw;
+    max-width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    height: 5rem;
+    background-color: #000000;
+  
+    img.nav-logo {
+      max-height: 3rem;
+      margin: 0.5em;
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      margin-right: 3rem;
+      .btn.nav-link {
+        font-size: 0.7rem;
+        color: #000;
+        max-width: 5rem;
+      }
+    }
+  }
+}

@@ -31,7 +31,7 @@
     "uuid": "~3.3.2",
     "xterm": "^3.8.0"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "https://arcane-thicket-82509.herokuapp.com/",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",

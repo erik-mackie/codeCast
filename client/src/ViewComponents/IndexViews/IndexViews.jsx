@@ -23,7 +23,7 @@ function IndexViews (){
 			<div className="stream-views">
 				<Switch>
 					<Route exact path="/" render={() => (
-						<div>
+						<div className="welcome-message">
 							<h1>Welcome to CodeCast!</h1>
 							<p>CodeCast is a platform for streaming live videos and tutorials to anyone, anywhere.</p>
 							<p>Stream video, terminal output and your project directory, allowing you to reach and teach your viewers like never before!</p>

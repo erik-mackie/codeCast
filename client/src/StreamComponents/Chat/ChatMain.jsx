@@ -4,18 +4,9 @@ import MessageList from './MessageList.jsx';
 import Chatbar from './ChatBar.jsx';
 import uuid from 'uuid/v1';
 import { connect } from 'react-redux';
-import { newConnection, sendMessage } from '../../redux/ducks/chatDuck';
+import { chatActions } from '../../redux/_actions';
+
 import store from '../../redux/store/index.js';
-
-const mapDispatchToProps = (dispatch) => ({
-  sendMessage: (msg) => dispatch(sendMessage(msg)),
-  alertConnection: () => dispatch(newConnection('New connection established from React')) 
-});
-
-const mapStateToProps = (state) => ({
-  messages: state.chat.messages,
-  notifications: state.chat.notifications
-});
 
 class Chat extends Component {
   constructor(props) {
@@ -105,5 +96,15 @@ class Chat extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  messages: state.chat.messages,
+  notifications: state.chat.notifications
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  sendMessage: (msg) => dispatch(chatActions.sendMessage(msg)),
+  alertConnection: () => dispatch(chatActions.newConnection('New connection established from React')) 
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chat);

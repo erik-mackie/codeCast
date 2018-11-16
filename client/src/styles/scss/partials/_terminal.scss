@@ -17,8 +17,10 @@
         display: flex;
         min-width: 50vw !important;
         min-height: 48vh;
+
       }
-      canvas.xterm-text-layer, canvas.xterm-cursor-layer {
+      canvas.xterm-text-layer, canvas.xterm-cursor-layer, .xterm-screen {
+        bottom: 0;
         padding: 0.5rem 3rem 1rem 2rem;
       }
     }

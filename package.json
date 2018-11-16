@@ -6,13 +6,13 @@
   "main": "client/src/index.js",
   "scripts": {
     "update-all": "concurrently 'npm update' 'npm update --prefix server' 'npm update --prefix client'",
-    "install-all": "concurrently 'npm install' 'npm install --prefix server' 'npm install --prefix client' 'npm install --prefix electronapp' 'chmod 777 electronapp/npm_install.sh' './electronapp/npm_install.sh'",
+    "install-all": "npm install && concurrently 'npm install --prefix server' 'npm install --prefix client' 'npm install --prefix electronapp' 'chmod 777 electronapp/npm_install.sh' './electronapp/npm_install.sh'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js",
     "react": "npm start --prefix client",
     "electron": "npm start --prefix electronapp",
     "start": "concurrently --kill-others-on-fail 'npm run react' 'npm run server'",
-    "electron-start": "concurrently --kill-others-on-fail 'npm run server' 'wait-on http://localhost:8080 && npm run electron'"
+    "electron-start": "concurrently --kill-others-on-fail 'npm run server' 'wait-on https://arcane-thicket-82509.herokuapp.com/ && npm run electron'"
   },
   "repository": {
     "type": "git",

@@ -8,9 +8,9 @@
     "start": "electron . --ignore-gpu-blacklist",
     "build": "webpack",
     "rebuild-pty": "electron-rebuild -f -w node-pty",
-    "sass": "sass --watch src/styles/scss:src/styles/css"
+    "sass": "sass --watch src/styles/scss/index.scss:public/styles/css/index.css"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "https://arcane-thicket-82509.herokuapp.com/",
   "repository": "https://github.com/benji-leboe/codeCast",
   "author": "Spencer Shupe, Benji Leboe, Erik Mackie",
   "dependencies": {
@@ -18,7 +18,9 @@
     "axios": "~0.18.0",
     "browserslist": "^4.3.4",
     "electron": "^2.0.9",
+    "less": "~3.8.1",
     "node-pty": "^0.7.8",
+    "postcss-loader": "~3.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -46,7 +48,7 @@
     "electron-is-dev": "^1.0.1",
     "electron-packager": "^12.2.0",
     "electron-rebuild": "~1.8.2",
-    "file-loader": "^2.0.0",
+    "file-loader": "~2.0.0",
     "html-webpack-plugin": "~3.2.0",
     "less-loader": "~4.1.0",
     "node-libs-browser": "^0.5.2",

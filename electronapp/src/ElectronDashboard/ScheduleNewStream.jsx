@@ -4,7 +4,7 @@ import { Input, Select, DatePicker } from 'antd';
 import { connect } from 'react-redux'; 
 
 import { postScheduledStream } from '../redux/ducks/streamsDuck.js'
-import { Router, withRouter, Link, Redirect } from 'react-router-dom';
+import { withRouter, Link, Redirect } from 'react-router-dom';
 
 const InputGroup = Input.Group;
 const Option = Select.Option;
@@ -58,13 +58,9 @@ class ScheduleNewStream extends React.Component {
     
     return (
 
-        <main className="new-stream">
-          <header className="header">
-            <Link to='/' id="dashboard-btn">Dashboard</Link>
-            <div className="logoPlaceholder">p</div>
-          </header>
+        <main className="new-stream">          
           <div className="inputs-container">
-            <h1>Schedule A Stream</h1>
+            <h1 className="container-header">Schedule A Stream</h1>
 
             <div className="forms-container">
               <form id="form" onSubmit={this.HandleSubmit}>
@@ -77,26 +73,7 @@ class ScheduleNewStream extends React.Component {
                   <textarea type="text" rows="4" cols="90" description={this.state.description} onChange={this.DescriptionOnChange} />
                 </div>
                 <div className=" bottom-container">
-                  <DatePicker
-                    className="date-selection"
-                    showTime
-                    format="YYYY-MM-DD HH:mm:ss"
-                    placeholder="Select Time"
-                    onChange={this.onChange}
-                    onOk={this.onOk}
-                  />
-                  {/* Language image selector */}
-                  <InputGroup compact>
-                    <Select className="image-select" defaultValue="default" onChange={this.HandleImageSelection}>
-                      <Option value="default">----</Option>
-                      <Option value="javascript">JavaScript</Option>
-                      <Option value="ruby">Ruby</Option>
-                      <Option value="csshtml">CSS/HTML</Option>
-                      <Option value="csharp">Csharp</Option>
-                      <Option value="python">Python</Option>
-                      <Option value="php">PHP</Option>
-                    </Select>
-                  </InputGroup>
+                  
                   <input type="submit" value="Submit" />
                 </div>
               </form>

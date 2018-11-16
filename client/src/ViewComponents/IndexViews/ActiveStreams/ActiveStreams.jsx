@@ -6,7 +6,7 @@ import pythonImg from '../../../images/python.png';
 import javascriptImg from '../../../images/javascript.png';
 import csharpImg from '../../../images/csharp.png';
 import htmlcssImg from '../../../images/htmlcss.png';
-import { fetchActiveStreams } from '../../../redux/ducks/streamsDuck.js';
+import { streamsActions } from '../../../redux/_actions';
 import { Link, withRouter, Route } from 'react-router-dom';
 import Stream from '../../../StreamComponents/StreamIndex.jsx';
 
@@ -93,7 +93,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchActiveStreams: () => dispatch(fetchActiveStreams())
+    fetchActiveStreams: () => dispatch(streamsActions.fetchActiveStreams())
   }
 }
 

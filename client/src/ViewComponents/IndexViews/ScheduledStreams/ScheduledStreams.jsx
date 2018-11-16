@@ -6,7 +6,7 @@ import pythonImg from '../../../images/python.png';
 import javascriptImg from '../../../images/javascript.png';
 import csharpImg from '../../../images/csharp.png';
 import htmlcssImg from '../../../images/htmlcss.png';
-import { fetchScheduledStreams } from '../../../redux/ducks/streamsDuck.js';
+import { streamsActions } from '../../../redux/_actions';
 import { Link, withRouter } from 'react-router-dom';
 
 class ScheduledStreams extends Component {
@@ -88,7 +88,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchScheduledStreams: () => dispatch(fetchScheduledStreams())
+    fetchScheduledStreams: () => dispatch(streamsActions.fetchScheduledStreams())
   }
 }
 

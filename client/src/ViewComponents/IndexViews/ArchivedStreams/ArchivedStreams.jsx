@@ -6,7 +6,7 @@ import pythonImg from '../../../images/python.png';
 import javascriptImg from '../../../images/javascript.png';
 import csharpImg from '../../../images/csharp.png';
 import htmlcssImg from '../../../images/htmlcss.png';
-import { fetchArchivedStreams } from '../../../redux/ducks/streamsDuck.js';
+import { streamsActions } from '../../../redux/_actions';
 import { Link, withRouter, Route } from 'react-router-dom';
 
 class ArchivedStreams extends Component { 
@@ -90,7 +90,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchArchivedStreams: () => dispatch(fetchArchivedStreams())
+    fetchArchivedStreams: () => dispatch(streamsActions.fetchArchivedStreams())
   }
 }
 

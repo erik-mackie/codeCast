@@ -1,7 +1,2 @@
 node_modules
 **/.DS_Store
-**/package-lock.json
-.vscode/
-electron-app/public/fileData/content.json
-electron-app/public/fileData/directory.json
-electron-app/public/fileData/filepaths.json

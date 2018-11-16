@@ -1,101 +1,107 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,800");
 .dashboard {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  min-width: 100vw;
 }
-.dashboard .header {
-  height: 35%;
+.dashboard .streams {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.dashboard .header .image-placeholder {
+.dashboard .streams .imageHeader {
   width: 50px;
   height: 50px;
   margin: 0.5em;
   background-color: black;
 }
-.dashboard .header .stream-controls {
+.dashboard .streams .stream-controls {
   display: flex;
   justify-content: center;
   border: 2px solid black;
   padding: 1em 2em;
   width: 60%;
 }
-.dashboard .header .stream-controls #instant {
-  margin: 0.5em;
-}
-.dashboard .header .stream-controls #scheduleNew {
-  margin: 0.5em;
-}
-.dashboard .streams {
-  height: 65%;
+.dashboard .streams .container-header {
+  color: #FFF;
 }
 .dashboard .streams .scheduledStreamCard {
-  width: 90%;
-  height: 15%;
   display: flex;
+  flex-direction: row;
+  color: #000;
   justify-content: space-between;
-  border: 2px solid black;
-  margin: 1em 0;
-  align-items: center;
+  border: 1px solid black;
+  background-color: #cacaca;
+  border-radius: 10px;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.6);
+  min-width: 75vw;
+  margin: 2rem 2rem;
+  padding: 1rem;
 }
-.dashboard .streams .scheduledStreamCard .startPlaceholder {
-  width: 50px;
-  height: 50px;
-  background-color: aquamarine;
-}
-.dashboard .streams .scheduledStreamCard p {
-  font-size: 3.5em;
-  height: 20%;
-}
-.dashboard .streams .scheduledStreamCard div {
-  display: inline-flex;
-}
-.dashboard .streams .scheduledStreamCard div .date-time {
+.dashboard .streams .scheduledStreamCard .info-container {
   display: flex;
   flex-direction: column;
 }
-.dashboard .streams .scheduledStreamCard div .date-time #date {
-  font-size: 1em;
-  display: block;
+.dashboard .streams .scheduledStreamCard .info-container .date-time {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .streams .scheduledStreamCard .info-container .date-time #date, .dashboard .streams .scheduledStreamCard .info-container .date-time #time {
+  font-size: 0.7rem;
+  display: flex;
   margin: 0;
 }
-.dashboard .streams .scheduledStreamCard div .date-time #time {
-  font-size: 1em;
-  display: block;
-  margin: 0;
+.dashboard .streams .scheduledStreamCard p {
+  font-size: 1.5em;
+  height: 20%;
 }
 .dashboard .streams .scheduledStreamCard .controls {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.dashboard .streams .scheduledStreamCard .controls #edit-btn {
-  background-color: skyblue;
+.dashboard .streams .scheduledStreamCard .controls #start-btn {
+  background-color: #a3a3a3;
   padding: 3px;
-  font-size: 1em;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.dashboard .streams .scheduledStreamCard .controls #start-btn:hover {
+  background: rgba(0, 0, 0, 0);
+  color: #b8b8b8;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.dashboard .streams .scheduledStreamCard .controls #edit-btn {
+  background-color: #a3a3a3;
+  padding: 3px;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  margin: 0.5rem;
 }
 .dashboard .streams .scheduledStreamCard .controls #edit-btn:hover {
   background: rgba(0, 0, 0, 0);
-  color: #3a7999;
-  box-shadow: inset 0 0 0 3px #3a7999;
+  color: #b8b8b8;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .dashboard .streams .scheduledStreamCard .controls #delete-btn {
-  background-color: darkred;
+  background-color: #6b6b6b;
   padding: 3px;
-  font-size: 1em;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  margin: 0.5rem;
 }
 .dashboard .streams .scheduledStreamCard .controls #delete-btn:hover {
   background: rgba(0, 0, 0, 0);
-  color: #3a7999;
-  box-shadow: inset 0 0 0 3px #3a7999;
+  color: #b8b8b8;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
+.new-stream {
+  color: #FFF;
+}
 .new-stream .header {
   display: flex;
   justify-content: center;
@@ -105,11 +111,6 @@
   margin: 1em;
   float: left;
 }
-.new-stream .header .logoPlaceholder {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-}
 .new-stream .inputs-container {
   display: flex;
   justify-content: center;
@@ -117,9 +118,11 @@
 }
 .new-stream .inputs-container h1 {
   justify-content: center;
+  color: #FFF;
 }
-.new-stream .inputs-container .forms-container form .title-input h3 {
+.new-stream .inputs-container h3 {
   justify-content: space-around;
+  color: #FFF;
 }
 .new-stream .inputs-container .forms-container form .bottom-container {
   display: inline-flex;
@@ -127,37 +130,136 @@
 }
 
 .start-scheduled {
-  height: 100%;
-}
-.start-scheduled .header {
-  height: 20%;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-}
-.start-scheduled .header .logoPlaceholder {
-  width: 50px;
-  height: 50px;
-  background-color: black;
 }
 .start-scheduled .main-container {
-  height: 60%;
-  border: 2px solid black;
-  background-color: white;
+  color: #FFF;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.start-scheduled .main-container .content-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 40vw;
+}
+.start-scheduled .main-container .content-wrapper .container-header {
+  font-size: 2rem;
+  display: flex;
+  color: #FFF;
   justify-content: center;
 }
+.start-scheduled .main-container .content-wrapper .youtube-header {
+  margin-left: 1rem;
+}
+.start-scheduled .main-container .content-wrapper .url-input {
+  margin: 0.5rem;
+  border-radius: 3px;
+}
+.start-scheduled .main-container .content-wrapper .submit-button {
+  margin-left: 1rem;
+}
 .start-scheduled .main-container div h1 {
-  font-size: 2em;
+  font-size: 2rem;
+  color: #FFF;
+}
+.start-scheduled .main-container div h3 {
+  font-size: 1.6rem;
+  color: #FFF;
 }
 .start-scheduled .main-container div p {
-  font-size: 1em;
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.nav-container .nav-header {
+  display: flex;
+  min-width: 100vw;
+  max-width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  height: 5rem;
+  background-color: #000000;
+}
+.nav-container .nav-header img.nav-logo {
+  max-height: 3rem;
+  margin: 0.5em;
+}
+.nav-container .nav-header .nav-links {
+  display: flex;
+  flex-direction: row;
+  margin-right: 3rem;
+}
+.nav-container .nav-header .nav-links .btn.nav-link {
+  font-size: 0.7rem;
+  color: #000;
+  max-width: 5rem;
+}
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
 }
 
 .App {
-  width: 800px;
-  height: 600px;
-  background-color: darkgray;
+  min-width: 100vh;
+  min-height: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #202133;
+  color: #FFF;
+}
+.App .electron-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+}
+.App .electron-container .nav-container {
+  min-width: 100vw;
+  max-width: 100vw;
+}
+.App .electron-container .view-container {
+  min-width: 100vw;
+}
+
+.btn {
+  background-color: #bbb;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  border: 2px outset #bbb;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  margin: 0.5rem 1rem 0.5rem 0rem;
+  max-width: 6rem;
+  min-width: 6rem;
+  max-height: 2rem;
+}
+.btn:hover {
+  background-color: #777;
 }
 
 /*# sourceMappingURL=index.css.map */

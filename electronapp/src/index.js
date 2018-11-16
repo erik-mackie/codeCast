@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from './redux/store/index.js';
 import Root from './Root.jsx';
-import './styles/css/index.css';
+import '../public/styles/css/index.css';
 
 
 ReactDOM.render(

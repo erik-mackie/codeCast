@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-
-//components
-// import LiveStreamNow from './ElectronDashboard/LiveStreamNow.jsx';
-// import ScheduleNewStream from './ElectronDashboard/ScheduleNewStream.jsx';
-// import StartScheduled from './ElectronDashboard/StartScheduled.jsx';
-// import ElectronDashboard from './ElectronDashboard/ElectronDashboard.jsx';
+import { Route, withRouter } from 'react-router-dom';
 import IndexView from './ViewComponents/IndexView.jsx';
 
 // import logo from './assets/logo.svg';
@@ -37,6 +31,6 @@ function mapDispatchToProps(dispatch) {
   };   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 
 

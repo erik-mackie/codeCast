@@ -1,5 +1,12 @@
 .pageGrid {
 
+  .welcome-message {
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+  }
   .index-view {
     background-color: #777;
     width: 100vw;

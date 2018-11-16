@@ -1,40 +1,53 @@
   // new-stream
   .start-scheduled {
-    height: 100%;
+    overflow: hidden;
+    display: flex;
 
-    .header {
-      height:20%;
-
-      display: flex;
-      justify-content: center;
-
-      // .dashboard-btn {
-        
-      // }
-      .logoPlaceholder {
-        width: 50px;
-        height: 50px;
-        background-color:black;
-      }
-    }
     .main-container{
-      height: 60%;
-      border: 2px solid black;
-      background-color: white;
+      color: #FFF;
+      align-items: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      max-width: 60vw;
+      margin-left: auto;
+      margin-right: auto;
 
-      div {
-        h1{
-          font-size: 2em;
+      .content-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 40vw;
+
+        .container-header {
+          font-size: 2rem;
+          display: flex;
+          color: #FFF;
+          justify-content: center;
         }
-        p {
-          font-size: 1em;
+        .youtube-header {
+          margin-left: 1rem;
+        }
+        .url-input {
+          margin: 0.5rem;
+          border-radius: 3px;
+        }
+        .submit-button {
+          margin-left: 1rem;
         }
       }
-      // .forms-container{
-         
-      // }
+      div {
+        h1{
+          font-size: 2rem;
+          color: #FFF;
+        }
+        h3{
+          font-size: 1.6rem;
+          color: #FFF;
+        }
+        p {
+          font-size: 1rem;
+          color: #FFF;
+        }
+      }
     }
   }

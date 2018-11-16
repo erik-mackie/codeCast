@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tree } from 'antd';
 import { connect } from 'react-redux';
-import { updateFile } from '../../redux/ducks/directoryDuck';
+import { fileActions } from '../../redux/_actions';
 
 const TreeNode = Tree.TreeNode;
 
@@ -70,7 +70,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    sendFileID: (fileID) => dispatch(updateFile(fileID))
+    sendFileID: (fileID) => dispatch(fileActions.updateFile(fileID))
   }
 }
 

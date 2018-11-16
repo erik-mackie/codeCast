@@ -3,7 +3,7 @@ import { rootReducer } from '../ducks/Ducktator';
 import createSocketMW from 'redux-socket.io';
 import socketIO from 'socket.io-client';
 import thunk from 'redux-thunk';
-const io = socketIO.connect('http://localhost:8080/redux');
+const io = socketIO.connect('https://arcane-thicket-82509.herokuapp.com/redux');
 
 const socketMW = createSocketMW(io, 'server/', { execute: executor });
 

@@ -5,7 +5,7 @@ const Terminal = require('xterm').Terminal;
 const socket = require('socket.io-client');
 const directoryWatcher = require('./src/fileServices/directoryWatcher.js');
 const path = require('path');
-const io = socket.connect('http://localhost:8080/terminal');
+const io = socket.connect('https://arcane-thicket-82509.herokuapp.com/terminal');
 
 // Initialize node-pty with an appropriate shell
 const shell = process.env[os.platform() === 'win32' ? 'COMSPEC' : 'SHELL'];

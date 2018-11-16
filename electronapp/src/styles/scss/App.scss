@@ -1,11 +1,71 @@
-@import 'partials/electronDashBoard.scss';
-@import 'partials/liveStreamNow.scss';
-@import 'partials/scheduleNewStream.scss';
-@import 'partials/startScheduled.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800');
+@import 'partials/electronDashboard';
+@import 'partials/liveStreamNow';
+@import 'partials/scheduleNewStream';
+@import 'partials/startScheduled';
+@import 'partials/nav';
 
-// testing purposes delete me once electron can host its own content
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+}
+
 .App {
-  width: 800px;
-  height: 600px;
-  background-color: darkgray;
-} 
+  min-width: 100vh;
+  min-height: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(32, 33, 51);
+  color: #FFF;
+
+  .electron-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    
+    .nav-container {
+      min-width: 100vw;
+      max-width: 100vw;
+    }
+
+    .view-container {
+      min-width: 100vw;
+    }
+
+  }
+}
+
+.btn {
+  background-color: #bbb;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  border: 2px outset #bbb;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  margin: 0.5rem 1rem 0.5rem 0rem;
+  max-width: 6rem;
+  min-width: 6rem;
+  max-height: 2rem;
+
+  &:hover {
+    background-color: #777;
+  }
+}

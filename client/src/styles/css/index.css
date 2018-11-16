@@ -290,7 +290,8 @@
   min-width: 50vw !important;
   min-height: 48vh;
 }
-.Terminal-display .wrapper .terminal-main canvas.xterm-text-layer, .Terminal-display .wrapper .terminal-main canvas.xterm-cursor-layer {
+.Terminal-display .wrapper .terminal-main canvas.xterm-text-layer, .Terminal-display .wrapper .terminal-main canvas.xterm-cursor-layer, .Terminal-display .wrapper .terminal-main .xterm-screen {
+  bottom: 0;
   padding: 0.5rem 3rem 1rem 2rem;
 }
 
@@ -307,6 +308,13 @@
   color: #fff;
 }
 
+.pageGrid .welcome-message {
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+}
 .pageGrid .index-view {
   background-color: #777;
   width: 100vw;
@@ -481,10 +489,6 @@ code {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
