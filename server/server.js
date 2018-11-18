@@ -19,9 +19,18 @@ const rootPath         = path.join(__dirname, '..');
 const buildPath        = path.join(rootPath, 'client', 'build');
 const devPath          = path.join(rootPath, 'client', 'public', 'index.html');
 
+//users
+//users
+const cors = require('cors');
+const jwt = require('_helpers/jwt');
+const errorHandler = require('./helpers/error-handler.js');
+//users
+//users
+
 let fileCache          = null;
 let dirCache           = null;
 let pathCache          = null;
+
 
 // app.use(postgraphile(process.env.DATABASE_URL || 'postgres:///codecast', {
 //   'dynamicJson': true,
@@ -288,20 +297,32 @@ const users = {
   }
 }
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 
-app.post('/register', (req,res) => {
-  users[uuid().slice(0,8)] = {
-    firstName: req.body,
-    lastName: '',
-    userName: '',
-    email: req.body['email'],
-    password: bcrypt.hashSync(req.body['password'], 10)
-  };
-})
+// use JWT auth to secure the api
+app.use(jwt());
+
+// api routes
+app.use('/users', require('./users/users.controller'));
+
+// global error handler
+app.use(errorHandler);
+
+// app.post('/register', (req,res) => {
+//   users[uuid().slice(0,8)] = {
+//     firstName: req.body,
+//     lastName: '',
+//     userName: '',
+//     email: req.body['email'],
+//     password: bcrypt.hashSync(req.body['password'], 10)
+//   };
+// })
 
 
 
 
 
-// get registered user
+
 
