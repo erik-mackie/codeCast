@@ -9,8 +9,8 @@ function Nav() {
 			<div className="nav">
 				<NavLink to="/"><img className="navLogo" src={ CodecastLogo }></img></NavLink>
 				<div className="login-register">
-					<NavLink to="/login" className="navBtn">Login</NavLink>
-					<NavLink to="/register" className="navBtn">Register</NavLink>
+					<NavLink to="/user/login" className="navBtn">Login</NavLink>
+					<NavLink to="/user/register" className="navBtn">Register</NavLink>
 				</div>
 			</div>
 			

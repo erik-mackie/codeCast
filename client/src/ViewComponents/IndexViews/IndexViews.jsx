@@ -37,8 +37,8 @@ function IndexViews (){
           <Route exact path="/archived" component={ ArchivedStreams } className="index-view archived" />
 					<Route path="/archived/:id" component={ Stream } />
           <Route path="/active/:id" component={ Stream } />
-					<Route exact path="/register" component={ Register } />
-					<Route exact path="/login" component={ Login } />
+					<Route exact path="/user/register" component={ Register } />
+					<Route exact path="/user/login" component={ Login } />
 				</Switch>
 			</div>
 		</div>

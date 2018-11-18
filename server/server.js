@@ -272,3 +272,36 @@ app.post('/api/electron', (req, res) => {
   
 });
 
+
+
+// users 
+// users 
+// users 
+// users 
+const users = {
+  "s434f2d5": {
+    firstName: "Erik",
+    lastName: "Mackie",
+    userName: 'Dabermann',
+    email: 'erik.mackie@gmail.com',
+    password: '123'
+  }
+}
+
+
+app.post('/register', (req,res) => {
+  users[uuid().slice(0,8)] = {
+    firstName: req.body,
+    lastName: '',
+    userName: '',
+    email: req.body['email'],
+    password: bcrypt.hashSync(req.body['password'], 10)
+  };
+})
+
+
+
+
+
+// get registered user
+
