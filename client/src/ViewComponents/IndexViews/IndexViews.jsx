@@ -7,6 +7,8 @@ import ArchivedStreams from './ArchivedStreams/ArchivedStreams.jsx';
 import IndexHeader from './IndexHeader.jsx';
 import Stream from '../../StreamComponents/StreamIndex.jsx';
 import Nav from '../Nav.jsx';
+import Register from '../UserComponents/RegisterPage.jsx';
+import Login from '../UserComponents/LoginPage.jsx';
 
 function IndexViews (){
 
@@ -35,6 +37,8 @@ function IndexViews (){
           <Route exact path="/archived" component={ ArchivedStreams } className="index-view archived" />
 					<Route path="/archived/:id" component={ Stream } />
           <Route path="/active/:id" component={ Stream } />
+					<Route exact path="/register" component={ Register } />
+					<Route exact path="/login" component={ Login } />
 				</Switch>
 			</div>
 		</div>
