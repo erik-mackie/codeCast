@@ -22,7 +22,6 @@ const devPath          = path.join(rootPath, 'client', 'public', 'index.html');
 //users
 //users
 const cors = require('cors');
-const jwt = require('_helpers/jwt');
 const errorHandler = require('./helpers/error-handler.js');
 //users
 //users
@@ -302,7 +301,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // use JWT auth to secure the api
-app.use(jwt());
+
 
 // api routes
 app.use('/users', require('./users/users.controller'));

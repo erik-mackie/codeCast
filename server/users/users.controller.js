@@ -20,6 +20,8 @@ function authenticate(req, res, next) {
 }
 
 function register(req, res, next) {
+    console.log(req.body, "register req");
+    console.log(res.body, 'register res');
     userService.create(req.body)
         .then(() => res.json({}))
         .catch(err => next(err));
